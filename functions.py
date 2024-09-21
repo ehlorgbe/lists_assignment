@@ -10,15 +10,15 @@ def get_item_information(item_code):
   for item in data.menu_items:
     item_number, item_name, item_price = item.split(' ')
     if item_number == item_code:
-      return item_name.encode("ascii", "ignore").decode(),int(item_price)
+      return [item_name.encode("ascii", "ignore").decode(),int(item_price)]
 
 def display_items():
   """Displays all menu items grouped by category."""
-  print("Drinks: ", [item for item in data.menu_items if item[0] == 'D'])
-  print("Appetizers: ", [item for item in data.menu_items if item[0] == 'A'])
-  print("Salads: ", [item for item in data.menu_items if item[0] == 'S'])
-  print("Entrees: ", [item for item in data.menu_items if item[0] == 'E'])
-  print("Desserts: ", [item for item in data.menu_items if item[0] == 'T'])
+  print('Drinks', [d.replace('\u200b','') for d in data.menu_items if d[0] == 'D'])
+  print('Appetizers', [d.replace('\u200b','') for d in data.menu_items if d[0] == 'A'])
+  print("Salads: ", [d.replace('\u200b','') for d in data.menu_items if d[0] == 'S'])
+  print("Entrees: ", [d.replace('\u200b','') for d in data.menu_items if d[0] == 'E'])
+  print("Desserts: ", [d.replace('\u200b','') for d in data.menu_items if d[0] == 'T'])
 
 def get_item_number():
   display_items()

@@ -22,7 +22,7 @@ def show_main_menu():
         print("No orders to print.")
     elif user_menu_choice in 'Nn':
       print('New order')
-      make_order(user_menu_choice.upper())  #calls a function for adding to the orders
+      make_order()  #calls a function for adding to the orders
       # User menu choice processing
     elif user_menu_choice in 'Cc':
         change_order()
@@ -30,13 +30,14 @@ def show_main_menu():
         print("You did not enter a valid input, Try again")
   
 
-def make_order(menu_choice):
-  print('Functionality for menu choice ', menu_choice)
+def make_order():
+  # print('Functionality for menu choice ', menu_choice)
   user_selection = functions.get_item_number()
   item_code, quantity = user_selection.split()
-  item_price = (functions.get_item_information(item_code)).split()[1]
+  item_price = functions.get_item_information(item_code)[1]
+  item_name = functions.get_item_information(item_code)[0]
   customer_order_list.append((item_code,int(quantity)))
-  print(f"Added {quantity} of {item_code} at ${item_price} each to your order.")
+  print(f"Added {quantity}x of {item_code} {item_name} at ${item_price*int(quantity)} to your order.")
 
 def change_order():
   """Allows the user to change their order by removing or updating items."""
