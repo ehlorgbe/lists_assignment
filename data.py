@@ -27,3 +27,5 @@ salad_items = ['S1', 'S2', 'S3']
 entree_items = ['E1', 'E2',  'E3', 'E4']
 dessert_items =['T1', 'T2',  'T3', 'T4']
 all_items = drink_items + appetizer_items + salad_items + entree_items + dessert_items
+
+item_category = [drink_items,appetizer_items,salad_items,entree_items,dessert_items]

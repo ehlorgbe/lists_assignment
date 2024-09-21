@@ -1,9 +1,10 @@
 #user interface to the main menu
 import data
 import functions
+customer_order_list = []
 def show_main_menu():
   while True:
-    print("Solomon diner") #edit to show your name
+    print("Elliot's diner") #edit to show your name
     print("__________")
     print('N for a new order')
     print('X for close orders and print the check')
@@ -23,8 +24,8 @@ def make_order(menu_choice):
   item_code, quantity = user_selection.split()
   print(functions.get_item_information(item_code))
 
-def close_order(menu_choice):
-  print('Functionality for menu choice ', menu_choice)
+
+
 
 
 
