@@ -44,13 +44,13 @@ def add_item_to_order(order_list, item_list, item_category):
         if another_item == 'N':
             break
 
-def remove_item_from_order(order_list, item_category):
+def remove_item_from_order(order_list):
     if len(order_list) != 0:
-        print(f"Current {item_category} order: {order_list}")
-        item_name = input(f"Enter item name to remove from {item_category}: ")
-        if item_name in order_list:
-            order_list.remove(item_name)
+        print(f"Current items in your cart {order_list}")
+        item_code = input(f"Enter item code to remove from {order_list}: ").upper()
+        if item_code in order_list:
+            order_list.remove(item_code)
         else:
-            print(f"{item_name} not found in {item_category} order.")
+            print(f"{item_code} not found in {order_list} order.")
     else:
-        print(f"No items in {item_category} order to remove.")
+        print(f"No items in {order_list} order to remove.")
